@@ -9,12 +9,9 @@ import AddIcon from '@mui/icons-material/Add';
 function Sidebar() {
 
 
-
-
-    
     return (
         <>
-            <Box sx={{ display: { xs: "none", sm: "block" } }} className="sidebar" flex={1} p={2} >
+            <Box sx={{ display: { xs: "none", sm: "none", md: "none", lg: "block" }, bgcolor: "red" }} className="sidebar" flex={1} pt={2} pl={1}>
                 <Box position="fixed">
                     <List>
                         <ListItem disablePadding>
@@ -60,7 +57,8 @@ function Sidebar() {
                     </List>
                 </Box>
             </Box>
-            <Box sx={{ display: { xs: "block", sm: "none", md: "none" }, width: '1rem' }} className="sidebar" flex={0.5} p={2}>
+            <Box sx={{ display: { xs: "none", sm: "none", lg: "none" } }} className="sidebar" flex={0.5} >
+
                 <List>
 
                     <ListItem disablePadding>

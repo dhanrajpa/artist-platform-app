@@ -62,7 +62,7 @@ function ArtistRegistration() {
 
     const handleSubmitA = async (event) => {
         event.preventDefault();
-        console.log(checkEmailA, checkPasswordA,checkAgeA);
+        console.log(checkEmailA, checkPasswordA, checkAgeA);
         if (checkConfPasswordA === checkPasswordA) {
 
             let data =
@@ -89,7 +89,7 @@ function ArtistRegistration() {
             setPasswordA('');
             setAgeA('');
             setGenderA('');
-            setContactA(''); 
+            setContactA('');
             setArtFormA('');
             setRoleA('');
 
@@ -98,170 +98,170 @@ function ArtistRegistration() {
 
     return (
         <>
-        {/* <Nav/> */}
-        <div id='ARegistration-div'>
+            {/* <Nav/> */}
+            <div id='ARegistration-div'>
 
-            <ThemeProvider theme={theme}>
+                <ThemeProvider theme={theme}>
 
-                <Container component="main" maxWidth="xs" sx={{ height: '40rem', display: 'flex', alignItems: 'center' }}>
-                    <CssBaseline />
-                    <Box id="ARegistration-card"
-                        sx={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                            justifyItems: 'center',
-                        }}
-                    >
-                        <Avatar sx={{ mt: 2, mb: 1, bgcolor: 'primary.main', }}>
-                            <LockOutlinedIcon />
-                        </Avatar>
-                        <Typography component="h1" variant="h6">
-                            Artist Registration
-                        </Typography>
-                        <Box component="form" onSubmit={handleSubmitA} noValidate sx={{ mt: 1, width: '80%', }}>
-                            <TextField
-                                fullWidth
-                                id="Aname"
-                                label="Name"
-                                name="name"
-                                autoComplete="name"
-                                autoFocus
-                                variant="standard"
-                                sx={{ mt: 0 }}
-                                onChange={handleNameChange}
-                                InputProps={{ sx: { height: 28 } }}
-                                />
-
-                            <TextField
-                                required
-                                fullWidth
-                                id="areg-email"
-                                label="Email Address"
-                                name="email"
-                                autoComplete="email"
-                                autoFocus
-                                variant="standard"
-                                sx={{ mt: 1 }}
-                                onChange={handleEmailChange}
-                                InputProps={{ sx: { height: 28 } }}
-
-                            />
-                            <TextField
-                                required
-                                fullWidth
-                                name="password"
-                                label="Password"
-                                type="password"
-                                id="AReg-password"
-                                autoComplete="current-password"
-                                variant="standard"
-                                sx={{ mt: 1 }}
-                                onChange={handlePasswordChange}
-                                InputProps={{ sx: { height: 28 } }}
-
-                            />
-                            <TextField
-                                required
-                                fullWidth
-                                name="Confirm password"
-                                label="Confirm Password"
-                                type="password"
-                                id="ACpassword"
-                                autoComplete="current-password"
-                                variant="standard"
-                                sx={{ mt: 1 }}
-                                onChange={handleConfpasswordChange}
-                                InputProps={{ sx: { height: 28 } }}
-                                />
-                            <Grid container item sx={{ mt: 2 }}>
-                                <FormLabel id="aRadio-label" sx={{ mt: 1 }}>Gender  </FormLabel>
-                                <FormControl sx={{ ml: 5 }}>
-                                    <RadioGroup
-                                        row
-                                        aria-labelledby="demo-radio-buttons-group-label"
-                                        name="radio-buttons-group"
-                                    >
-
-                                        <FormControlLabel  value="Female" control={<Radio />} onChange={handleGenderChange} label="Female" />
-                                        <FormControlLabel value="Male" control={<Radio />} onChange={handleGenderChange}  label="Male" />
-
-                                    </RadioGroup>
-                                </FormControl>
-                            </Grid>
-
-                            <TextField
-                                name="Age"
-                                label="Age"
-                                type="text"
-                                id="age"
-                                variant="standard"
-                                onChange={handleAgeChange}
-                                InputProps={{ sx: { height: 28 } }}
-                                sx={{ width: "25%", float: 'left', mt: 0 }}
-                            />
-
-                            <TextField
-                                fullWidth
-                                name="cNo"
-                                label="Contact No"
-                                type="text"
-                                id="cNo"
-                                // autoComplete="current-password"
-                                variant="standard"
-                                onChange={handleContactChange}
-                                sx={{ width: "65%", float: 'right', mb: 0, mt: 0 }}
-                                InputProps={{ sx: { height: 28 } }}
-
-                            />
-
-                            <Grid container item id="artform">
+                    <Container component="main" maxWidth="xs" sx={{ height: '40rem', display: 'flex', alignItems: 'center' }}>
+                        <CssBaseline />
+                        <Box id="ARegistration-card"
+                            sx={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                justifyItems: 'center',
+                            }}
+                        >
+                            <Avatar sx={{ mt: 2, mb: 1, bgcolor: 'primary.main', }}>
+                                <LockOutlinedIcon />
+                            </Avatar>
+                            <Typography component="h1" variant="h6">
+                                Artist Registration
+                            </Typography>
+                            <Box component="form" onSubmit={handleSubmitA} noValidate sx={{ mt: 1, width: '80%', }}>
                                 <TextField
                                     fullWidth
-                                    id="Art-Form"
-                                    label="Art Form"
-                                    name="Art Form"
-                                    autoComplete="Art Form"
+                                    id="Aname"
+                                    label="Name"
+                                    name="name"
+                                    autoComplete="name"
+                                    autoFocus
+                                    variant="standard"
+                                    sx={{ mt: 0 }}
+                                    onChange={handleNameChange}
+                                    InputProps={{ sx: { height: 28 } }}
+                                />
+
+                                <TextField
+                                    required
+                                    fullWidth
+                                    id="areg-email"
+                                    label="Email Address"
+                                    name="email"
+                                    autoComplete="email"
                                     autoFocus
                                     variant="standard"
                                     sx={{ mt: 1 }}
-                                    onChange={handleArtFormChange}
+                                    onChange={handleEmailChange}
                                     InputProps={{ sx: { height: 28 } }}
 
                                 />
-                            </Grid>
-                            <Button
-                                type="submit"
-                                variant="contained"
-                                color="primary"
-                                sx={{ mt: 2, mb: 2, color: 'white' }}
-                            >
-                                Sign Up
-                            </Button>
+                                <TextField
+                                    required
+                                    fullWidth
+                                    name="password"
+                                    label="Password"
+                                    type="password"
+                                    id="AReg-password"
+                                    autoComplete="current-password"
+                                    variant="standard"
+                                    sx={{ mt: 1 }}
+                                    onChange={handlePasswordChange}
+                                    InputProps={{ sx: { height: 28 } }}
 
-                            <Grid container item id='ASign-Link'>
-                                <Grid container item >
-                                    Have an account?
-                                    <Link href="/Login" color="#616161" sx={{ textDecoration: 'inherit' }} variant="body3">
-                                        &nbsp;{"  Login"}
-                                    </Link>
+                                />
+                                <TextField
+                                    required
+                                    fullWidth
+                                    name="Confirm password"
+                                    label="Confirm Password"
+                                    type="password"
+                                    id="ACpassword"
+                                    autoComplete="current-password"
+                                    variant="standard"
+                                    sx={{ mt: 1 }}
+                                    onChange={handleConfpasswordChange}
+                                    InputProps={{ sx: { height: 28 } }}
+                                />
+                                <Grid container item sx={{ mt: 2 }}>
+                                    <FormLabel id="aRadio-label" sx={{ mt: 1 }}>Gender  </FormLabel>
+                                    <FormControl sx={{ ml: 5 }}>
+                                        <RadioGroup
+                                            row
+                                            aria-labelledby="demo-radio-buttons-group-label"
+                                            name="radio-buttons-group"
+                                        >
+
+                                            <FormControlLabel value="Female" control={<Radio />} onChange={handleGenderChange} label="Female" />
+                                            <FormControlLabel value="Male" control={<Radio />} onChange={handleGenderChange} label="Male" />
+
+                                        </RadioGroup>
+                                    </FormControl>
                                 </Grid>
-                                <Grid container item >
-                                    Register as a
-                                    <Link href="/userRegistration" color="#616161" sx={{ textDecoration: 'inherit' }} variant="body5">
-                                        &nbsp;{"User"}
-                                    </Link>
+
+                                <TextField
+                                    name="Age"
+                                    label="Age"
+                                    type="text"
+                                    id="age"
+                                    variant="standard"
+                                    onChange={handleAgeChange}
+                                    InputProps={{ sx: { height: 28 } }}
+                                    sx={{ width: "25%", float: 'left', mt: 0 }}
+                                />
+
+                                <TextField
+                                    fullWidth
+                                    name="cNo"
+                                    label="Contact No"
+                                    type="text"
+                                    id="cNo"
+                                    // autoComplete="current-password"
+                                    variant="standard"
+                                    onChange={handleContactChange}
+                                    sx={{ width: "65%", float: 'right', mb: 0, mt: 0 }}
+                                    InputProps={{ sx: { height: 28 } }}
+
+                                />
+
+                                <Grid container item id="artform">
+                                    <TextField
+                                        fullWidth
+                                        id="Art-Form"
+                                        label="Art Form"
+                                        name="Art Form"
+                                        autoComplete="Art Form"
+                                        autoFocus
+                                        variant="standard"
+                                        sx={{ mt: 1 }}
+                                        onChange={handleArtFormChange}
+                                        InputProps={{ sx: { height: 28 } }}
+
+                                    />
                                 </Grid>
-                            </Grid>
+                                <Button
+                                    type="submit"
+                                    variant="contained"
+                                    color="primary"
+                                    sx={{ mt: 2, mb: 2, color: 'white' }}
+                                >
+                                    Sign Up
+                                </Button>
+
+                                <Grid container item id='ASign-Link'>
+                                    <Grid container item >
+                                        Have an account?
+                                        <Link href="/Login" color="#616161" sx={{ textDecoration: 'inherit' }} variant="body3">
+                                            &nbsp;{"  Login"}
+                                        </Link>
+                                    </Grid>
+                                    <Grid container item >
+                                        Register as a
+                                        <Link href="/userRegistration" color="#616161" sx={{ textDecoration: 'inherit' }} variant="body5">
+                                            &nbsp;{"User"}
+                                        </Link>
+                                    </Grid>
+                                </Grid>
+                            </Box>
+
+
                         </Box>
+                    </Container>
+                </ThemeProvider>
 
-
-                    </Box>
-                </Container>
-            </ThemeProvider>
-
-        </div>
-        <Footer/>
+            </div>
+            <Footer />
         </>
     )
 }

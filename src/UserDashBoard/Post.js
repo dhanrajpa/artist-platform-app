@@ -12,19 +12,18 @@ import Favorite from '@mui/icons-material/Favorite';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Box, Card, CardHeader, Checkbox, Button } from '@mui/material'
 
-const Post =(props) =>{
+const Post = (props) => {
 
-    const imgs = {props}
+    const imgs = { props }
 
-    const ut ="./DBimage/";
+    const ut = "./DBimage/";
 
     return (
 
-        <Card sx={{margin:2}}>
+        <Card sx={{ margin: 2 }}>
 
             <Button variant="text" color="primary" sx={{ float: "left", ml: "1rem" }}>
-
-                <Typography gutterBottom variant="h6    " component="div">
+                <Typography gutterBottom variant="h6" component="div">
                     <AccountCircleIcon /> {imgs.props.imgs.postimg_id}
                 </Typography>
             </Button>
@@ -32,12 +31,12 @@ const Post =(props) =>{
             <CardMedia
                 component="img"
                 height="20%"
-                image={ut+imgs.props.imgs.postimage}
+                image={ut + imgs.props.imgs.postimage}
                 sx={{ height: '30rem' }}
             />
             <CardContent>
                 <Typography variant="body3" color="text.secondary">
-                {imgs.props.imgs.imgdesc}
+                    {imgs.props.imgs.imgdesc}
                 </Typography>
             </CardContent>
             <CardActions disableSpacing>
@@ -45,7 +44,7 @@ const Post =(props) =>{
                     <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite sx={{ color: "red", mb: 0 }} />} />
                 </IconButton>
                 <Typography variant="body3" color="text.secondary">
-                   <Button> Comments </Button>
+                    <Button> Comments </Button>
                 </Typography>
 
             </CardActions>

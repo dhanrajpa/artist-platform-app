@@ -3,6 +3,7 @@ import { createContext, useEffect, useRef, useState } from "react";
 const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
+
     const [isAuth, setAuth] = useState({})
     const effectRan = useRef(false);
 
@@ -23,7 +24,6 @@ export const AuthProvider = ({ children }) => {
         }
 
         return () => {
-            // console.log('unmounted parent')
             effectRan.current = true
         }
     }, [isAuth])

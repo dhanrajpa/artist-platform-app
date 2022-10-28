@@ -7,13 +7,12 @@ import Addpost from './Addpost'
 import EventForm from './EventForm'
 // import Notify from '../Component/Notify'
 
-function ADashboard() {
+function UserDashBoard() {
 
 
     return (
 
         <Box >
-            {/* <Navbar /> */}
             <Stack direction="row" spacing={2} justifyContent="space-between">
                 <Sidebar />
                 <Feed />
@@ -27,4 +26,4 @@ function ADashboard() {
     )
 }
 
-export default ADashboard
+export default UserDashBoard

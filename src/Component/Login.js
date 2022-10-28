@@ -13,7 +13,6 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import '../Scss/Login/Login.css'
 import axios from 'axios';
 import Footer from './Footer';
-// import { useNavigate } from 'react-router';
 import { NavLink } from "react-router-dom";
 import AuthContext from '../authCheck/AuthProvider';
 import useAuth from '../Hooks/useAuth';

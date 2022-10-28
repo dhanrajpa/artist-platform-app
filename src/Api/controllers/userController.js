@@ -148,7 +148,7 @@ const userRegisterCheck = async (req, res) => {
 
     let email = req.body.name;
     daaa.map((i) => {
-        if (email == i) {
+        if (email === i) {
             return "email valid";
         } else {
             return "email not registered"
@@ -168,7 +168,6 @@ module.exports = {
     userRegisterCheck,
     authDetails
 }
-
 
 
 

@@ -32,7 +32,7 @@ function Rightbar() {
 
   return (
 
-    <Box bgcolor="white" sx={{ display: { sm: "none", md: "block", xs: "none" } }} flex={2} flexDirection="row" p={2} >
+    <Box bgcolor="white" sx={{ display: { sm: "none", md: "block", xs: "none" }, bgcolor: "green" }} flex={2} flexDirection="row" p={2} >
 
 
       <Box bgcolor="white" position="fixed">

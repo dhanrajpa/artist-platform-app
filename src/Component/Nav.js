@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -15,18 +15,24 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import '../Scss/ContactUs/ContactUs.css';
 import { Link } from "react-router-dom";
-import { useEffect } from 'react';
 import useAuth from '../Hooks/useAuth';
 
 
 const commonPage = ['Home', 'Login', 'Register', 'About Us', 'Artist DashBoard', 'User DashBoard', 'Contact Us'];
 
 function Nav() {
+
     const { isAuth, setAuth } = useAuth();
+    const [role, setRole] = useState("")
 
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
-    const [role, setRole] = useState("")
+
+    useEffect(() => {
+        if (isAuth) {
+            setRole(isAuth.role)
+        }
+    }, [isAuth, role])
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -52,12 +58,7 @@ function Nav() {
         setRole("")
     }
 
-    useEffect(() => {
-        if (isAuth) {
-            setRole(isAuth.role)
-            console.log(role);
-        }
-    }, [isAuth, role])
+
 
 
     return (
@@ -176,7 +177,6 @@ function Nav() {
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, mt: 1 }}>
-
                         <Button
                             component={Link}
                             to='/home'
@@ -186,9 +186,7 @@ function Nav() {
                             {commonPage[0]}
                         </Button>
 
-                        {/* session storage rtrival role  */}
                         {!role &&
-
                             <Button
                                 component={Link}
                                 to="/Login"
@@ -222,7 +220,7 @@ function Nav() {
                         {role === "user" &&
                             <Button
                                 component={Link}
-                                to="/uDashboard"
+                                to="/userDashboard"
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 1, color: 'white', display: 'block' }}
                             >
@@ -230,11 +228,10 @@ function Nav() {
                             </Button>
                         }
 
-
                         <Button
                             component={Link}
                             to="/aboutUs"
-                            onClick={[handleCloseNavMenu]}
+                            onClick={handleCloseNavMenu}
                             sx={{ my: 1, color: 'white', display: 'block' }}
                         >
                             {commonPage[3]}
@@ -248,14 +245,6 @@ function Nav() {
                         >
                             {commonPage[6]}
                         </Button>
-
-
-
-
-
-
-
-
 
                     </Box>
 
@@ -282,9 +271,7 @@ function Nav() {
                                 open={Boolean(anchorElUser)}
                                 onClose={handleCloseUserMenu}
                             >
-                                {/* <MenuItem onClick={handleCloseUserMenu}> */}
                                 {role === "artist" &&
-
                                     <Button
                                         component={Link}
                                         to="#"
@@ -297,19 +284,13 @@ function Nav() {
 
                                 <Button
                                     component={Link}
-                                    // to="#"
                                     onClick={logOut}
                                     sx={{ my: 1, display: 'block' }}
                                 >
                                     LogOut
                                 </Button>
-
-                                {/* </MenuItem> */}
-
-
                             </Menu>
                         </Box>
-
                     }
 
                 </Toolbar>
