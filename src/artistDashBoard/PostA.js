@@ -79,6 +79,24 @@ const PostA = (props) => {
 
 
 
+                <CardContent id="Card-comment">
+                    <Button component={Link} to='#' sx={{ pr: 1, pb: 0, pt: 0, pl: 0, color: '#1F1F1F', }} id="view-comments">view all 2 comments </Button>
+
+
+                    <Button component={Link} to='#' sx={{ fontWeight: 'bold', pr: 1, pb: 0, pt: 0, pl: 0, color: '#1F1F1F', }} id="User-Name-commentor">Sandesh</Button>
+                    <Typography variant="body2" color="text.secondary" id="content-comment" align="justify" sx={{ pb: 0, pr: 1 }}>
+                        the 'color' props to TypgraphyYou dont need to seperately pass th
+                        the 'color' props to TypgraphyYou dont need to seperately pass th
+                    </Typography>
+                    <Button component={Link} to='#' sx={{ fontWeight: 'bold', pr: 1, pb: 0, pt: 0, pl: 0, color: '#1F1F1F', }} id="User-Name-commentor">Khali muttaswamy venugopal ayyar</Button>
+                    <Typography variant="body2" color="text.secondary" id="content-comment" align="justify" sx={{ pb: 0, pr: 1 }}>
+                        the 'color' props to TypgraphyYou dont need to seperately pass th
+                        the 'color' props to TypgraphyYou dont need to seperately pass th
+                    </Typography>
+                </CardContent>
+
+
+
 
 
 
