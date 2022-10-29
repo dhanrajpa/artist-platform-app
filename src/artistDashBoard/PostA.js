@@ -28,7 +28,7 @@ const PostA = (props) => {
 
     const img = { props }
 
-    const handleOpenNavMenu = (event) => {
+    const handleClick = (event) => {
         setAnchorElNav(!anchorElNav);
     };
 
@@ -58,7 +58,7 @@ const PostA = (props) => {
                                 <Checkbox uncheckedIcon={<FavoriteBorder fontSize='medium' sx={{ mb: 0, mt: 0, ml: 0 }} />} icon={<FavoriteBorder fontSize='medium' sx={{ mb: 0, mt: 0, ml: 0 }} />} checkedIcon={<Favorite sx={{ color: "red", mb: 0, transform: "scale(1.2)", }} />} />
                             </Tooltip>
                             <Tooltip title="See Comments" >
-                                <IconButton aria-label="add to favorites" sx={{ mb: 0, mt: 0, ml: 2 }} onClick={handleOpenNavMenu} >
+                                <IconButton aria-label="add to favorites" sx={{ mb: 0, mt: 0, ml: 2 }}  >
                                     <ChatRoundedIcon fontSize='medium' />
                                 </IconButton>
                             </Tooltip>
@@ -80,19 +80,22 @@ const PostA = (props) => {
 
 
                 <CardContent id="Card-comment">
-                    <Button component={Link} to='#' sx={{ pr: 1, pb: 0, pt: 0, pl: 0, color: '#1F1F1F', }} id="view-comments">view all 2 comments </Button>
+                    <Button component={Link} to='#' sx={{ pr: 1, pb: 0, pt: 0, pl: 0, color: '#1F1F1F', }} id="view-comments" onClick={handleClick}>view all 2 comments </Button>
 
-
-                    <Button component={Link} to='#' sx={{ fontWeight: 'bold', pr: 1, pb: 0, pt: 0, pl: 0, color: '#1F1F1F', }} id="User-Name-commentor">Sandesh</Button>
-                    <Typography variant="body2" color="text.secondary" id="content-comment" align="justify" sx={{ pb: 0, pr: 1 }}>
-                        the 'color' props to TypgraphyYou dont need to seperately pass th
-                        the 'color' props to TypgraphyYou dont need to seperately pass th
-                    </Typography>
-                    <Button component={Link} to='#' sx={{ fontWeight: 'bold', pr: 1, pb: 0, pt: 0, pl: 0, color: '#1F1F1F', }} id="User-Name-commentor">Khali muttaswamy venugopal ayyar</Button>
-                    <Typography variant="body2" color="text.secondary" id="content-comment" align="justify" sx={{ pb: 0, pr: 1 }}>
-                        the 'color' props to TypgraphyYou dont need to seperately pass th
-                        the 'color' props to TypgraphyYou dont need to seperately pass th
-                    </Typography>
+                    {anchorElNav &&
+                        <>
+                            <Button component={Link} to='#' sx={{ fontWeight: 'bold', pr: 1, pb: 0, pt: 0, pl: 0, color: '#1F1F1F', }} id="User-Name-commentor">Sandesh</Button>
+                            <Typography variant="body2" color="text.secondary" id="content-comment" align="justify" sx={{ pb: 0, pr: 1 }}>
+                                the 'color' props to TypgraphyYou dont need to seperately pass th
+                                the 'color' props to TypgraphyYou dont need to seperately pass th
+                            </Typography>
+                            <Button component={Link} to='#' sx={{ fontWeight: 'bold', pr: 1, pb: 0, pt: 0, pl: 0, color: '#1F1F1F', }} id="User-Name-commentor">Khali muttaswamy venugopal ayyar</Button>
+                            <Typography variant="body2" color="text.secondary" id="content-comment" align="justify" sx={{ pb: 0, pr: 1 }}>
+                                the 'color' props to TypgraphyYou dont need to seperately pass th
+                                the 'color' props to TypgraphyYou dont need to seperately pass th
+                            </Typography>
+                        </>
+                    }
                 </CardContent>
 
 
