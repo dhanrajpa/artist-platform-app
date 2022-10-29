@@ -70,26 +70,13 @@ const PostA = (props) => {
                 </CardActions>
 
                 <CardContent id="Card-content">
-                    {/* <Typography variant="body2" color="#1F1F1F" sx={{ fontWeight: 'bold', pb: 0, display: 'inline-flex', height: 1 }}> */}
                     <Button component={Link} to='#' sx={{ fontWeight: 'bold', pr: 1, pb: 0, pt: 0, pl: 0, color: '#1F1F1F', }} id="User-Name">Kakarot</Button>
-                    {/* </Typography> */}
                     <Typography variant="body2" color="text.secondary" id="content-bio" align="justify" sx={{ pb: 1, pr: 1 }}>
-                        the 'color' props to TypgraphyYou dont need to seperately pass the 'color' props to Typgraphy 'color' props to Typgraphy
-                        the 'color' props to TypgraphyYou dont need to seperately pass the 'color' props to Typgraphy 'color' props to Typgraphy
-
+                        the 'color' props to TypgraphyYou dont need to seperately pass th
+                        the 'color' props to TypgraphyYou dont need to seperately pass th
                     </Typography>
                 </CardContent>
 
-                {/* <Box id="Card-content">
-                    <Button sx={{ pb: 0, pl: 0, pt: 0, display: 'inline-flex', height: 1 }}>
-                        <Typography variant="body3" color="#1F1F1F" fontWeight='fontWeightMedium' id="Like-content" >
-                            1 Like
-                        </Typography>
-                    </Button>
-                    <Typography variant="body2" color="text.secondary" pl={1} pr={2} align="justify" id="content-bio" >
-                        Bi You dont need to sepera You dont need to seperately pass the 'color' props to TypgraphyYou dont need to seperately pass the 'color' props to TypgraphyYou dont need to seperately pass the 'color' props to Typgraphy
-                    </Typography>
-                </Box> */}
 
 
 
