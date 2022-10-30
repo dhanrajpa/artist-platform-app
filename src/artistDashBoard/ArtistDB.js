@@ -7,7 +7,7 @@ import PerdonalFeed from './PerdonalFeed'
 
 const ArtistDB = () => {
     return (
-        <Box mt={1} ml={10} mr={10}>
+        <Box mt={1} ml={5} mr={5}>
             {/* <ProfileHeader /> */}
             {/* <Divider /> */}
             <Stack direction="row" spacing={2} justifyContent="space-between">

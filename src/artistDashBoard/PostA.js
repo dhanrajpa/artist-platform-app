@@ -24,17 +24,17 @@ import { Link } from 'react-router-dom';
 
 const PostA = (props) => {
 
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
+    const [anchorEl, setAnchorEl] = React.useState(false);
 
     const img = { props }
 
     const handleClick = (event) => {
-        setAnchorElNav(!anchorElNav);
+        setAnchorEl(!anchorEl);
     };
 
     return (
         <>
-            <Card sx={{ margin: 2, boxShadow: 0 }}>
+            <Card sx={{ margin: 1, boxShadow: 0 }}>
 
                 <IconButton variant="h6" sx={{ float: "left", ml: "0.3rem", mt: "0.3rem" }} letterSpacing={2} component="div">
                     <Avatar alt="Goku" src={ProfilePicGoku} sx={{ width: 32, height: 32 }} />
@@ -48,7 +48,7 @@ const PostA = (props) => {
                     component="img"
                     // height="10%"
                     image={ProfilePicGoku}
-                    sx={{ height: '30rem', boxShadow: 1 }}
+                    sx={{ boxShadow: 1 }}
                 />
 
                 <CardActions disableSpacing sx={{ position: 'relative', pt: 0, pb: 0 }} >
@@ -77,12 +77,11 @@ const PostA = (props) => {
                     </Typography>
                 </CardContent>
 
-
-
                 <CardContent id="Card-comment">
+
                     <Button component={Link} to='#' sx={{ pr: 1, pb: 0, pt: 0, pl: 0, color: '#1F1F1F', }} id="view-comments" onClick={handleClick}>view all 2 comments </Button>
 
-                    {anchorElNav &&
+                    {anchorEl &&
                         <>
                             <Button component={Link} to='#' sx={{ fontWeight: 'bold', pr: 1, pb: 0, pt: 0, pl: 0, color: '#1F1F1F', }} id="User-Name-commentor">Sandesh</Button>
                             <Typography variant="body2" color="text.secondary" id="content-comment" align="justify" sx={{ pb: 0, pr: 1 }}>
