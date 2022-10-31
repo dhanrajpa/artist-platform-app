@@ -6,7 +6,7 @@ import PostA from './PostA'
 const PerdonalFeed = () => {
     return (
         <>
-            <Box p={2} flexDirection="column" flex={2} sx={{ display: 'flex', justifyContent: 'center', bgcolor: "pink" }} >
+            <Box p={2} flexDirection="column" flex={1} sx={{ display: 'flex', justifyContent: 'center', bgcolor: "pink" }} >
                 <PostA imgs={img} />
                 <PostA imgs={img} />
                 <PostA imgs={img} />
