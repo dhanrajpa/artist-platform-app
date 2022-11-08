@@ -5,22 +5,22 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             allowNull: false,
+
             primaryKey: true
         },
-     
         postimage: {
             type: DataTypes.STRING
         },
-        imgdesc:{
+        imgdesc: {
             type: DataTypes.STRING,
 
         },
-        artist_id:{
+        artist_id: {
             type: DataTypes.INTEGER
         }
-     
-    },{ timestamps: false })
-    
+
+    }, { timestamps: false })
+
     return postImage
 }
 

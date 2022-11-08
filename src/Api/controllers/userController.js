@@ -13,6 +13,8 @@ const Role = db.roles
 const Artist = db.artists
 
 const addUser = async (req, res) => {
+
+
     let password = req.body.password;
 
     const hashedPassword = await bcrypt.hash(password, 10);
@@ -96,13 +98,12 @@ const authDetails = async (req, res) => {
     let cPassword = req.body.password;
 
     const Query =
-        `	select user_details.user_id as id,user_details.name,role, email, password from roles INNER JOIN user_details on roles.role_id=user_details.role_id
+        `	select user_details.user_id as id,user_details.name,role,roles.role_id as role_id, email,password from roles INNER JOIN user_details on roles.role_id=user_details.role_id
     where email="${cEmail}"
     union
-    select artist_details.artist_id as id,artist_details.name,role ,email,password from roles INNER JOIN artist_details on roles.role_id=artist_details.role_id
+    select artist_details.artist_id as id,artist_details.name,role,roles.role_id as role_id,email,password from roles INNER JOIN artist_details on roles.role_id=artist_details.role_id
     where email="${cEmail}"
     ;`
-
 
     const data = await sequelize.query(Query)
 
@@ -128,10 +129,6 @@ const authDetails = async (req, res) => {
 
         } else {
             res.status(404).send("user not found"
-                //     {
-                //     // auth: passwordValidate
-
-                // }
             );
         }
     }
@@ -168,9 +165,6 @@ module.exports = {
     userRegisterCheck,
     authDetails
 }
-
-
-
 
 
 

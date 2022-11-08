@@ -59,6 +59,7 @@ function Login() {
         axios.post("http://localhost:8080/api/check/authenticateLogin", JSON.stringify(data), {
             headers: {
                 "Content-Type": "application/json",
+                'Access-Control-Allow-Origin': '*'
             },
             withCredentials: true
         }

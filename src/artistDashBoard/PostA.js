@@ -11,7 +11,6 @@ import Modal from '@mui/material/Modal';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import Favorite from '@mui/icons-material/Favorite';
 import ChatRoundedIcon from '@mui/icons-material/ChatRounded';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Box, Card, CardHeader, Checkbox, Button, Tooltip } from '@mui/material'
 import ProfilePicGoku from '../images/tom-cruise-secret-life.webp'
 import { fontFamily, fontStyle } from '@mui/system';
@@ -27,9 +26,7 @@ const style = {
     transform: 'translate(-50%, -50%)',
     width: '30rem',
     bgcolor: 'background.paper',
-    // border: '2px solid #000',
     boxShadow: 24,
-
     p: 4,
 };
 
@@ -110,7 +107,7 @@ const PostA = (props) => {
                                                 expanded={false}
                                                 width={700}
                                                 id="show-more"
-                                                truncatedEndingComponent={"... "}
+                                                truncatedEndingComponent={"..."}
                                             >
                                                 the 'color' props to TypgraphyYou dont need to seperately pass th
                                                 the 'color' props to TypgraphyYou dont need to seperately pass th
@@ -123,7 +120,7 @@ const PostA = (props) => {
                         </Box>
 
 
-
+                        {/* //like count */}
                         <Typography variant="body3" color="#1F1F1F" fontWeight='fontWeightMedium' id="Like-content" href="/" >
                             1 Like
                         </Typography>
