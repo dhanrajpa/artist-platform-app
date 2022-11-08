@@ -5,7 +5,7 @@ const { roles } = require('../models/rolemodels');
 const { sequelize, postImg } = require('../models');
 const { postComments } = require('../models/commentsModel')
 const { likes } = require('../models/postLikesmodel')
-
+const { replies } = require('../models/replyModel')
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 // const {verify} from './userController.js'
@@ -14,6 +14,7 @@ const Artist = db.artists
 const Role = db.roles
 const LikesPost = db.likes;
 const Comment = db.comments;
+const Reply = db.replies
 
 const addArtist = async (req, res) => {
     let password = req.body.password;
@@ -191,9 +192,40 @@ const addComment = async (req, res) => {
 
 }
 
+/**
+ * replies api
+ */
+
+const reply = async (req, res) => {
+
+    const comment_id = req.params.commentID;
+    const reply = req.body.reply;
+    const { role_id } = req.payload;
+
+    await Comment.findOne({
+        where: {
+            comment_id: comment_id
+        }
+    }).then((data) => {
+        if (data) {
+
+            Reply.create({
+                comment_id: comment_id, reply: reply, role_id: role_id
+            }).then((response) => {
+                // const { reply } = response
+                res.send(response)
+            })
+        }
+    })
+
+
+}
+//end 
+
 //Artist Dashboard post Details
 
 /**
+ * TODO check for likes count per post
  * * params id used for getting artist details for Artist Dashboard
 */
 const getPostDetails = async (req, res) => {
@@ -230,6 +262,7 @@ module.exports = {
     addArtist,
     addComment,
     verify,
+    reply,
     editComment,
     delComment,
     getPostDetails,

@@ -7,4 +7,7 @@ router.post('/postComment/:postId', commentsController.verify, commentsControlle
 router.delete('/deleteComment/:commentID', commentsController.verify, commentsController.delComment);
 router.put('/editComment/:commentID', commentsController.verify, commentsController.editComment);
 
+// reply API
+router.post('/replyComment/:commentID', commentsController.verify, commentsController.reply);
+
 module.exports = router;

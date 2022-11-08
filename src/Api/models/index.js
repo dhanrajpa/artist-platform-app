@@ -31,6 +31,7 @@ db.events = require('./eventmodel.js')(sequelize, DataTypes);
 db.likes = require('./postLikesmodel')(sequelize, DataTypes);
 db.postImg = require('./postImgModel')(sequelize, DataTypes);
 db.comments = require('./commentsModel')(sequelize, DataTypes);
+db.replies = require('./replyModel.js')(sequelize, DataTypes);
 //assosiation
 
 
@@ -96,13 +97,14 @@ db.comments.belongsTo(db.postImg, {
  * users and post comments relationship
  */
 
-// db.comments.belongsToMany(db.roles, {
-//     foreignKey: 'role_id',
-// })
+db.comments.hasMany(db.replies, {
+    foreignKey: 'comment_id',
+})
 
-// db.roles.belongsToMany(db.comments, {
-//     foreignKey: 'role_id',
-// })
+db.replies.belongsTo(db.comments, {
+    foreignKey: 'comment_id',
+
+})
 
 db.sequelize.sync({ force: false }).then(() => {
     console.log('yes re-sync done');
